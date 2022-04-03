@@ -1,4 +1,4 @@
-@media screen and (min-width: 700px){
+@media screen and (min-width: 768px){
     .wrapper {
         display: grid;
         grid-template-areas: 
@@ -11,7 +11,7 @@
         padding: 0;
     }
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 768px){
     .wrapper {
         display: grid;
         grid-template-areas: 
@@ -48,7 +48,7 @@ aside {
     background-color: rgb(27, 26, 26);
     grid-area: sid;
 }
-article {
+.article1 {
     background-color: rgb(255, 255, 255);
     grid-area: art;
     display: grid;
