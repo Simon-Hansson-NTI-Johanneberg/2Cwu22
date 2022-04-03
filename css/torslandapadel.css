@@ -10,6 +10,26 @@
         height: 100vh;
         padding: 0;
     }
+    footer {
+        display: none;
+    }
+    aside {
+        background-color: rgb(27, 26, 26);
+        grid-area: sid;
+    }
+    article {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: grid;
+        grid-template-areas: 
+        'artdel1'
+        'artdel2'
+        'artdel3';
+        grid-template-rows: 40vh 40vh 40vh;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+    }
 }
 @media screen and (max-width: 768px){
     .wrapper {
@@ -29,7 +49,98 @@
     h1 {
         margin: 0;
     }
+    footer {
+        grid-area: foo;
+        background-color: rgb(27, 26, 26);
+        display: flex;
+        align-items: center;
+    }
+    article {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: grid;
+        grid-template-areas: 
+        'artdel1'
+        'artdel2'
+        'artdel3'
+        'foo';
+        grid-template-rows: 40vh 40vh 40vh 100px;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+    }
 }
+@media screen and (min-width: 768px){
+    .wrapper2 {
+        display: grid;
+        grid-template-areas: 
+        'log hea'
+        'sid art';
+        grid-template-rows: 200px 6fr;
+        grid-template-columns: 200px 6fr;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    footer {
+        display: none;
+    }
+    aside {
+        background-color: rgb(27, 26, 26);
+        grid-area: sid;
+    }
+    #article2 {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: grid;
+        grid-template-areas: 
+        'artdel1'
+        'artdel2';
+        grid-template-rows: 50vh 50vh;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .wrapper2 {
+        display: grid;
+        grid-template-areas: 
+        'log hea'
+        'art art';
+        grid-template-rows: 100px 6fr;
+        grid-template-columns: 100px 6fr;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+    }
+    aside {
+        display: none;
+    }
+    h1 {
+        margin: 0;
+    }
+    footer {
+        grid-area: foo;
+        background-color: rgb(27, 26, 26);
+        display: flex;
+        align-items: center;
+    }
+    #article2 {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: grid;
+        grid-template-areas: 
+        'artdel1'
+        'artdel2'
+        'foo';
+        grid-template-rows: 50vh 50vh 100px;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+    }
+}
+
 .logga {
     background-color: rgb(66, 66, 66);
     grid-area: log;
@@ -44,23 +155,7 @@ header {
     justify-content: space-around;
 }
 
-aside {
-    background-color: rgb(27, 26, 26);
-    grid-area: sid;
-}
-.article1 {
-    background-color: rgb(255, 255, 255);
-    grid-area: art;
-    display: grid;
-    grid-template-areas: 
-    'artdel1'
-    'artdel2'
-    'artdel3';
-    grid-template-rows: 40vh 40vh 40vh;
-    overflow-y: scroll;
-    grid-auto-flow: row;
-    min-height: 100%;
-}
+
 #artdel1 {
     grid-area: artdel1;
     background-color: #2b4ee7;
@@ -72,12 +167,16 @@ aside {
     font-size: 2rem;
     overflow-y: scroll;
 }
-#del1bilder {
-    display: flex;
-    flex-direction: row;
+.del1bilder{
+    width: 50%;
+    margin: 10px;
 }
 .artdel1text {
     display: none;
+    max-height: 60vh;
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
 }
 #artdel2 {
     grid-area: artdel2;
@@ -93,6 +192,8 @@ aside {
     display: none;
     max-height: 60vh;
     margin: 1rem;
+    align-items: center;
+    flex-direction: column;
 }
 #artdel3 {
     grid-area: artdel3;
@@ -109,8 +210,10 @@ aside {
     display: none;
     max-height: 60vh;
     margin: 1rem;
+    align-items: center;
+    flex-direction: column;
 }
-#lista {
+.lista {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -125,8 +228,10 @@ body {
 a {
     color: white;
     text-decoration: none;
-    cursor: auto;
-}    
+}
+.bild {
+    max-height: 40vh;
+}
 article::-webkit-scrollbar {
     display: none;
 }
@@ -137,5 +242,8 @@ article::-webkit-scrollbar {
     display: none;
 }
 #artdel3::-webkit-scrollbar {
+    display: none;
+}
+#article2::-webkit-scrollbar {
     display: none;
 }
