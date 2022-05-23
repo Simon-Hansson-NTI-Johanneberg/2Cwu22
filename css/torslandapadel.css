@@ -4,18 +4,80 @@
         grid-template-areas: 
         'log hea'
         'sid art';
-        grid-template-rows: 200px 6fr;
-        grid-template-columns: 200px 6fr;
+        grid-template-rows: 150px 6fr;
+        grid-template-columns: 150px 6fr;
         width: 100vw;
         height: 100vh;
         padding: 0;
     }
-    footer {
-        display: none;
-    }
     aside {
         background-color: rgb(27, 26, 26);
         grid-area: sid;
+    }
+    article {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: grid;
+        grid-template-areas: 
+        'artdel1'
+        'artdel2'
+        'artdel3';
+        grid-template-rows: 1fr 1fr 1fr;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+    }
+    .wrapper2 {
+        display: grid;
+        grid-template-areas: 
+        'log hea'
+        'sid art';
+        grid-template-rows: 150px 6fr;
+        grid-template-columns: 150px 6fr;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    #article2 {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: flex;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+        flex-wrap: wrap;
+    }
+    .meny {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .wrapper {
+        display: grid;
+        grid-template-areas: 
+        'log hea men'
+        'art art art';
+        grid-template-rows: 100px 6fr;
+        grid-template-columns: 100px 6fr 100px;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+    }
+    aside {
+        height: 100vh;
+        width: 65vw;
+        position: fixed;
+        top: 0;
+        left: -65vw;
+        transition: left 0.1s;
+        z-index: 10;
+        background-color: rgb(27, 26, 26);
+    }
+    .show {
+        left: 0;
+    }
+    h1 {
+        margin: 0;
     }
     article {
         background-color: rgb(255, 255, 255);
@@ -30,117 +92,31 @@
         grid-auto-flow: row;
         min-height: 100%;
     }
-}
-@media screen and (max-width: 768px){
-    .wrapper {
+    #article2 {
+        background-color: rgb(255, 255, 255);
+        grid-area: art;
+        display: flex;
+        overflow-y: scroll;
+        grid-auto-flow: row;
+        min-height: 100%;
+        flex-wrap: wrap;
+    }
+    .wrapper2 {
         display: grid;
         grid-template-areas: 
-        'log hea'
-        'art art';
+        'log hea men'
+        'art art art';
         grid-template-rows: 100px 6fr;
         grid-template-columns: 100px 6fr;
         height: 100vh;
         width: 100vw;
         padding: 0;
     }
-    aside {
-        display: none;
-    }
-    h1 {
-        margin: 0;
-    }
-    footer {
-        grid-area: foo;
+    .meny {
+        grid-area: men;
         background-color: rgb(27, 26, 26);
-        display: flex;
-        align-items: center;
-    }
-    article {
-        background-color: rgb(255, 255, 255);
-        grid-area: art;
-        display: grid;
-        grid-template-areas: 
-        'artdel1'
-        'artdel2'
-        'artdel3'
-        'foo';
-        grid-template-rows: 40vh 40vh 40vh 100px;
-        overflow-y: scroll;
-        grid-auto-flow: row;
-        min-height: 100%;
     }
 }
-@media screen and (min-width: 768px){
-    .wrapper2 {
-        display: grid;
-        grid-template-areas: 
-        'log hea'
-        'sid art';
-        grid-template-rows: 200px 6fr;
-        grid-template-columns: 200px 6fr;
-        width: 100vw;
-        height: 100vh;
-        padding: 0;
-    }
-    footer {
-        display: none;
-    }
-    aside {
-        background-color: rgb(27, 26, 26);
-        grid-area: sid;
-    }
-    #article2 {
-        background-color: rgb(255, 255, 255);
-        grid-area: art;
-        display: grid;
-        grid-template-areas: 
-        'artdel1'
-        'artdel2';
-        grid-template-rows: 50vh 50vh;
-        overflow-y: scroll;
-        grid-auto-flow: row;
-        min-height: 100%;
-    }
-}
-@media screen and (max-width: 768px){
-    .wrapper2 {
-        display: grid;
-        grid-template-areas: 
-        'log hea'
-        'art art';
-        grid-template-rows: 100px 6fr;
-        grid-template-columns: 100px 6fr;
-        height: 100vh;
-        width: 100vw;
-        padding: 0;
-    }
-    aside {
-        display: none;
-    }
-    h1 {
-        margin: 0;
-    }
-    footer {
-        grid-area: foo;
-        background-color: rgb(27, 26, 26);
-        display: flex;
-        align-items: center;
-    }
-    #article2 {
-        background-color: rgb(255, 255, 255);
-        grid-area: art;
-        display: grid;
-        grid-template-areas: 
-        'artdel1'
-        'artdel2'
-        'foo';
-        grid-template-rows: 50vh 50vh 100px;
-        overflow-y: scroll;
-        grid-auto-flow: row;
-        min-height: 100%;
-    }
-}
-
 .logga {
     background-color: rgb(66, 66, 66);
     grid-area: log;
@@ -152,10 +128,9 @@ header {
     grid-area: hea;
     font-size: 3rem;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
-
-
 #artdel1 {
     grid-area: artdel1;
     background-color: #2b4ee7;
@@ -168,23 +143,26 @@ header {
     overflow-y: scroll;
 }
 .del1bilder{
-    width: 50%;
+    width: 20vh;
     margin: 10px;
 }
 .artdel1text {
     display: none;
     max-height: 60vh;
     margin: 1rem;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
 }
 #artdel2 {
     grid-area: artdel2;
     background-color: #2b4ee7;
-    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 2rem;
     overflow-y: scroll;
 }
@@ -193,7 +171,9 @@ header {
     max-height: 60vh;
     margin: 1rem;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 #artdel3 {
     grid-area: artdel3;
@@ -211,7 +191,9 @@ header {
     max-height: 60vh;
     margin: 1rem;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .lista {
     display: flex;
@@ -228,12 +210,18 @@ body {
 a {
     color: white;
     text-decoration: none;
+    font-size: 2rem;
+}
+.art {
+    background-color: #2b4ee7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .bild {
     max-height: 40vh;
-}
-article::-webkit-scrollbar {
-    display: none;
 }
 #artdel1::-webkit-scrollbar {
     display: none;
@@ -246,4 +234,11 @@ article::-webkit-scrollbar {
 }
 #article2::-webkit-scrollbar {
     display: none;
+}
+ul {
+    list-style: none;
+}
+.pil {
+    width: 40px;
+    height: 50px;
 }
